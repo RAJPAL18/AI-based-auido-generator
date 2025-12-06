@@ -1,50 +1,45 @@
-🎧 Multilingual AI Audiobook Generator
+# 🎧 **Multilingual AI Audiobook Generator**
 
-The Multilingual AI Audiobook Generator allows users to upload PDF / DOCX / TXT documents and automatically convert them into audiobook-style MP3 narration.
-The system can:
+🔗 **Live Demo:**  
+https://rajpal18-ai-based-auido-generator-app-h96ltx.streamlit.app/
 
-Detect the original language of the document
+The **Multilingual AI Audiobook Generator** allows users to upload **PDF / DOCX / TXT** documents and automatically convert them into **audiobook-style MP3 narration**.
 
-Generate audio in the original language
+---
 
-Translate + rewrite in an audiobook-friendly style
+## 🚀 **Key Features**
+- Upload **PDF / DOCX / TXT**
+- **Automatic language detection**
+- **Chapter-wise processing**
+- Generate two types of audio:
+  - 🔊 Original-language narration
+  - 🌍 Translated & rephrased audiobook narration
+- **Supports 7 output languages:**
+  - English, Hindi, Marathi, Tamil, Telugu, Bengali, Gujarati
+- User-friendly **Streamlit interface**
+- **MP3 download per chapter**
 
-Generate audio in a selected target language
+---
 
-🚀 Key Features
+## 🧠 **Technology Stack**
+| Layer | Technology |
+|-------|-------------|
+| Frontend | Streamlit |
+| Text Extraction | PyPDF2, python-docx |
+| NLP | Google Gemini |
+| TTS | gTTS |
+| Secrets Handling | python-dotenv |
+| Language Detection & Rewriting | Gemini NLP |
 
-Upload PDF / DOCX / TXT files
+---
 
-Automatic language detection
-
-Chapter-based processing
-
-Generate two types of audio:
-
-Original-language narration
-
-Translated & rephrased audiobook narration
-
-Supports 7 languages:
-
-English, Hindi, Marathi, Tamil, Telugu, Bengali, Gujarati
-
-Streamlit-based clean user interface
-
-🛠 Technology Stack
-Component	Technology
-UI	Streamlit
-Text Extraction	PyPDF2, python-docx
-AI Model	Google Gemini
-Text-to-Speech	gTTS
-Language Translation & Rephrasing	Gemini NLP
-Environment Management	python-dotenv
-📂 Project Structure
-Multilingual_Audiobook/
+## 📂 **Project Structure**
+```
+project_root/
 │ app.py
 │ requirements.txt
-│ .env   (not uploaded to GitHub)
 │ .gitignore
+│ README.md
 │
 ├─ utils/
 │   extract_text.py
@@ -52,76 +47,88 @@ Multilingual_Audiobook/
 │   nlp.py
 │   tts.py
 │
+├─ assets/
+│   banner.png
+│
 └─ outputs/
-    └─ audio/        (generated audio saved here)
+    └─ audio/    (generated MP3 files)
+```
 
-⚙ Installation & Setup
-1️⃣ Install dependencies
+---
+
+## ⚙ **Setup & Installation**
+
+### ① Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-2️⃣ Add your Gemini API key
-
-Create .env file in project root:
-
+### ② Add your Gemini API key
+Create a file named `.env` (do NOT upload to GitHub):
+```
 GEMINI_API_KEY=your_api_key_here
+```
 
-3️⃣ Run the application
+### ③ Run the app
+```bash
 streamlit run app.py
+```
 
-▶ How It Works
+---
 
-Upload one or more documents
+## ▶ **How It Works**
+1. Upload document(s)
+2. Text automatically extracted
+3. Split into chapters
+4. Detect original language using AI
+5. Translate + rewrite in audiobook style
+6. Generate MP3 audio (original & translated)
+7. Play or download MP3 chapter-wise
 
-System extracts text and splits into chapters
+---
 
-For each chapter:
+## 📌 **Functional Requirements**
+- Document upload
+- Automatic language detection
+- Translation + narration option
+- Text-to-speech generation
+- Downloadable MP3 output
 
-Detects original language
+## 📌 **Non-Functional Requirements**
+- Easy to use UI
+- Secure API key handling
+- Fast audio generation (depends on chapter length)
+- Works across operating systems
+- Modular & maintainable code
 
-Optionally generates original-language audio
+---
 
-Translates + rephrases content into selected language
+## 🔐 **Security Notes**
+- `.env` must NOT be uploaded to GitHub
+- Audio files and temporary directories should be ignored
+- Use **Streamlit Secrets** when deploying to cloud
 
-Optionally generates translated audiobook audio
+---
 
-Audio can be played in the browser or downloaded as MP3
+## 👨‍💻 **Developer**
+**Rajpal Rajput**  
+B.Tech — AI & Data Science
 
-📌 Functional Requirements
+---
 
-User should be able to upload PDF / DOCX / TXT
+## 📬 **Future Scope**
+- Neural TTS voices (OpenAI / Azure)
+- Full audiobook MP3 merger
+- Background music in audio
+- EPUB / website article support
+- Download complete audiobook ZIP
 
-System must detect document language automatically
+---
 
-System must allow users to select output language
+## 💡 **Live Demo**
+👉 https://rajpal18-ai-based-auido-generator-app-h96ltx.streamlit.app/
 
-Users should be able to choose:
+---
 
-Original audio
-
-Translated audio
-
-Or both
-
-MP3 files should be downloadable
-
-📌 Non-Functional Requirements
-
-System should generate responses within reasonable time
-
-User interface must be simple and easy to follow
-
-API key must not be exposed publicly
-
-Output should be clear and understandable narration
-
-Project should run on any OS (Windows/Mac/Linux)
-
-🙌 Contribution Guidelines
-
-Pull requests are welcome.
-Please open an issue first to discuss major changes.
-
-🔒 Security Notes
-
-⚠ Do not upload .env file to GitHub
-⚠ Do not push generated .mp3 files — they are ignored via .gitignore
+### ⭐ If this project helped you  
+Consider giving the repo a **Star ⭐ on GitHub**!
